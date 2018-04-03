@@ -1,8 +1,5 @@
 ## Description
 ### This work originally from [MTCNN-Tensorflow](https://github.com/AITTSMD/MTCNN-Tensorflow.git)
-
-
-
 This work is used for reproduce MTCNN,a Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks.
 
 ## Prerequisites
