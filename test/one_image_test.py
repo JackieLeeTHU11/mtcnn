@@ -62,9 +62,9 @@ for imagepath in gt_imdb:
             cv2.circle(image, (int(landmark[2*i]),int(int(landmark[2*i+1]))), 3, (0,0,255))
         
     count = count + 1
-    #cv2.imwrite("result_landmark/%d.png" %(count),image)
-    cv2.imshow("lala",image)
-    cv2.waitKey(0)    
+    cv2.imwrite("result_landmark/%d.png" %(count),image)
+    # cv2.imshow("lala",image)
+    # cv2.waitKey(0)    
 
 '''
 for data in test_data:

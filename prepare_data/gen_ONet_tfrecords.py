@@ -31,7 +31,8 @@ def _get_output_filename(output_dir, name, net):
     #st = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     #return '%s/%s_%s_%s.tfrecord' % (output_dir, name, net, st)
     #return '%s/train_PNet_landmark.tfrecord' % (output_dir)
-    return '%s/landmark_landmark.tfrecord' % (output_dir)
+    # return '%s/landmark_landmark.tfrecord' % (output_dir)
+    return '%s/part_landmark.tfrecord' % (output_dir)
     
 
 def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
@@ -63,7 +64,7 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
             sys.stdout.flush()
             filename = image_example['filename']
             _add_to_tfrecord(filename, image_example, tfrecord_writer)
-    tfrecord_writer.close()
+    # tfrecord_writer.close()
     # Finally, write the labels file:
     # labels_to_class_names = dict(zip(range(len(_CLASS_NAMES)), _CLASS_NAMES))
     # dataset_utils.write_label_file(labels_to_class_names, dataset_dir)
@@ -73,7 +74,8 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
 def get_dataset(dir, net='PNet'):
     #item = 'imglists/PNet/train_%s_raw.txt' % net
     #item = 'imglists/PNet/train_%s_landmark.txt' % net
-    item = '%s/landmark_%s_aug.txt' % (net,net)
+    # item = '%s/landmark_%s_aug.txt' % (net,net)
+    item = '%s/part_%s.txt' % (net,net)
     print item 
     dataset_dir = os.path.join(dir, item)
     imagelist = open(dataset_dir, 'r')
